@@ -3,6 +3,8 @@
 - Legg til material-ui
 - Legg til styled components 
 
+- Skjønne Typescript få det til å funke
+
 - Lage login side funksjonalitet og design
 
 - Legg til enzyme
