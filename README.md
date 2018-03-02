@@ -1,4 +1,11 @@
+# Bruke react native?
+- med typescript
+- material ui
+- bygge lokal mobil
+- tab med animasjoner
+
 # POC app 2018
+
 - Rydde og slett ubrukt kode og bruke ts
 - Legg til material-ui
 - Legg til styled components 
