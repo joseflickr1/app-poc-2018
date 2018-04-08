@@ -7,6 +7,9 @@ const StyledHeader = styled.div`
     text-align: center;
     padding: 5rem 0;
     background-color: #ffd249;
+    svg {
+        width: 12%;
+    }
 `;
 
 const StyledContent = styled.div`
@@ -51,6 +54,7 @@ export default class Forside extends React.Component {
         return (
             <div>
                 <StyledHeader>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" version="1.1" viewBox="0 0 26.458333 26.458334"><g transform="translate(0 -270.54)"><circle cx="9.6818" cy="286.34" r="5.6127" fill="#392525"/><rect x="4.5369" y="273.89" width="10.461" height="5.0514" fill="#392525"/><rect x="1.115" y="271.59" width="24.329" height="24.329" fill="none" stroke="#fff" stroke-width="1.8915"/></g></svg>
                     <Typography type="display1">Vi hjelper deg med fotografering</Typography>
                     <p>
                         Vi tilbyr kvalitets fotografering og gode priser til dine behov
