@@ -4,12 +4,7 @@ import { RouteProps } from 'react-router';
 import { firebaseAuth } from './config/constants';
 
 import Home from './components/Home';
-import styled from 'styled-components';
-
-const StyledDiv = styled.div`
-    margin: 4em auto;
-    width: 400px;
-`;
+import Forside from './components/Forside';
 
 interface PR {
     authed: boolean;
@@ -24,14 +19,14 @@ function PublicRoute({authed, ...rest}: PR & RouteProps) {
 }
 
 class App extends React.Component {
-    removeListener: any;
+    removeListener: () => void;
     state = {
         authed: false,
         loading: true,
     };
 
     componentDidMount() {
-        this.removeListener = firebaseAuth().onAuthStateChanged((user: any) => {
+        this.removeListener = firebaseAuth().onAuthStateChanged((user: {email: 'string'}) => {
             if (user) {
                 this.setState({
                     authed: true,
@@ -55,9 +50,9 @@ class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
-                <StyledDiv className="poc-app">
+                <div>
                     <Switch>
-                        <Route path="/" exact={true} component={Home}/>
+                        <Route path="/" exact={true} component={Forside}/>
                         <PublicRoute
                             authed={this.state.authed}
                             component={Home}
@@ -65,7 +60,7 @@ class App extends React.Component {
                         />
                         <Route render={() => <h3>No Match</h3>}/>
                     </Switch>
-                </StyledDiv>
+                </div>
             </BrowserRouter>
         );
     }
