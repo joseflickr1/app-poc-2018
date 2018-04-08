@@ -8,7 +8,9 @@ const StyledHeader = styled.div`
     padding: 5rem 0;
     background-color: #ffd249;
     svg {
-        width: 12%;
+        width: 6rem;
+        height: 6rem;
+        padding: 31px;
     }
 `;
 
