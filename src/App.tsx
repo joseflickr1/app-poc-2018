@@ -9,9 +9,6 @@ import Button from 'material-ui/Button';
 import Home from './components/Home';
 import Forside from './components/Forside';
 
-
-
-
 interface PR {
     authed: boolean;
 }
@@ -32,7 +29,7 @@ class App extends React.Component {
     };
 
     componentDidMount() {
-        this.removeListener = firebaseAuth().onAuthStateChanged((user: {email: 'string'}) => {
+        this.removeListener = firebaseAuth().onAuthStateChanged((user: { email: 'string' }) => {
             if (user) {
                 this.setState({
                     authed: true,
@@ -57,10 +54,14 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                 <div>
-                    <AppBar position="fixed">
+                    <AppBar position="static">
                         <Toolbar>
-                            test
-                            <Button color="inherit">Login</Button>
+                            <Button
+                                color="inherit"
+                                href="/login"
+                            >
+                                Login
+                            </Button>
                         </Toolbar>
                     </AppBar>
                     <Switch>
