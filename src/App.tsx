@@ -2,9 +2,15 @@ import * as React from 'react';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import { RouteProps } from 'react-router';
 import { firebaseAuth } from './config/constants';
+import AppBar from 'material-ui/AppBar';
+import Toolbar from 'material-ui/Toolbar';
+import Button from 'material-ui/Button';
 
 import Home from './components/Home';
 import Forside from './components/Forside';
+
+
+
 
 interface PR {
     authed: boolean;
@@ -51,6 +57,12 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                 <div>
+                    <AppBar position="fixed">
+                        <Toolbar>
+                            test
+                            <Button color="inherit">Login</Button>
+                        </Toolbar>
+                    </AppBar>
                     <Switch>
                         <Route path="/" exact={true} component={Forside}/>
                         <PublicRoute
