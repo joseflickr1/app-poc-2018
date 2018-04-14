@@ -1,13 +1,24 @@
 import * as React from 'react';
 import Typography from 'material-ui/Typography';
 import styled from 'styled-components';
-
+import ScheduleIcon from '@material-ui/icons/Schedule';
+import StarIcon from '@material-ui/icons/Star';
+import Button from 'material-ui/Button';
+const style = {
+    bookingKnapp:  {
+        width: '110px',
+        height: '110px',
+        padding: '7px',
+        display: 'initial',
+        left: '0',
+        bottom: '-30px'
+    }
+}
 const StyledHeader = styled.div`
     width: 100%;
     text-align: center;
-    padding: 5rem 0;
     background-color: #ffd249;
-    svg {
+    svg.logo {
         width: 6rem;
         height: 6rem;
         padding: 31px;
@@ -56,11 +67,38 @@ export default class Forside extends React.Component {
         return (
             <div>
                 <StyledHeader>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" version="1.1" viewBox="0 0 26.458333 26.458334"><g transform="translate(0 -270.54)"><circle cx="9.6818" cy="286.34" r="5.6127" fill="#392525"/><rect x="4.5369" y="273.89" width="10.461" height="5.0514" fill="#392525"/><rect x="1.115" y="271.59" width="24.329" height="24.329" fill="none" stroke="#fff" strokeWidth="1.8915"/></g></svg>
-                    <Typography type="display1">Vi hjelper deg med fotografering</Typography>
+                    <svg className="logo" xmlns="http://www.w3.org/2000/svg" width="100" height="100" version="1.1"
+                         viewBox="0 0 26.458333 26.458334">
+                        <g transform="translate(0 -270.54)">
+                            <circle cx="9.6818" cy="286.34" r="5.6127" fill="#392525"/>
+                            <rect x="4.5369" y="273.89" width="10.461" height="5.0514" fill="#392525"/>
+                            <rect x="1.115" y="271.59" width="24.329" height="24.329" fill="none" stroke="#fff"
+                                  strokeWidth="1.8915"/>
+                        </g>
+                    </svg>
+                    <Typography
+                        variant="display2"
+                        style={{
+                            color: 'black'
+                        }}
+                    >
+                        Vi hjelper deg med fotografering
+                    </Typography>
                     <p>
                         Vi tilbyr kvalitets fotografering og gode priser til dine behov
                     </p>
+
+                    <Button
+                        size="medium"
+                        style={style.bookingKnapp}
+                        variant="fab"
+                        color="secondary"
+                        aria-label="booking"
+                    >
+                        <ScheduleIcon/>
+                        <Typography style={{color: 'white'}}>Book en avtale</Typography>
+                        <StarIcon/>
+                    </Button>
                 </StyledHeader>
                 <StyledContent>
                     <p>

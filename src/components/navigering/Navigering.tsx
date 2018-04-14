@@ -5,9 +5,15 @@ import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
+const style = {
+    appbar: {
+        backgroundColor: 'transparent',
+        color: 'black'
+    }
+};
 const Navigering = () => {
     return (
-            <AppBar position="static" >
+            <AppBar position="static" style={style.appbar}>
                 <Toolbar style={{display: 'flex', justifyContent: 'space-between'}}>
                     <IconButton color="inherit" aria-label="Menu">
                         <MenuIcon />

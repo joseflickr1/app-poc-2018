@@ -13,7 +13,7 @@ export default class Home extends React.Component {
         return (
             <div>
                 <StyledBlockDiv>
-                    <Typography type="display1">Velkommen til zwoo</Typography>
+                    <Typography variant="display3">Velkommen til zwoo</Typography>
                 </StyledBlockDiv>
                 <StyledBlockDiv>
                     <Button>
