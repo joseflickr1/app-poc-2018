@@ -32,13 +32,12 @@ const StyledHeader = styled.div`
 `;
 
 const StyledContent = styled.div`
-    max-width: 375px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 1rem 0;
+    padding: 1rem;
         
     @media (min-width: 768px) {
         max-width: 768px;
-        margin: 0 auto;
     }
     
     .ul-liste {
@@ -54,13 +53,12 @@ const StyledContent = styled.div`
 
 const StyledFooter = styled.div`
     text-align: right;
-    max-width: 375px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 1rem 0;
+    padding: 1rem;
         
     @media (min-width: 768px) {
         max-width: 768px;
-        margin: 0 auto;
     }
     
     > p {
