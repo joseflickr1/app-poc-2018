@@ -7,7 +7,10 @@ import Button from 'material-ui/Button';
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import IconButton from 'material-ui/IconButton';
-import Navigering from "../navigering/Navigering";
+import Navigering from '../navigering/Navigering';
+import { RouteComponentProps } from 'react-router';
+import * as H from 'history';
+
 
 const bilde1 = require('./img/spencer-backman-488537-unsplash.png');
 const bilde2 = require('./img/etienne-boulanger-265266-unsplash.png');
@@ -69,14 +72,16 @@ const StyledFooter = styled.div`
 
 `;
 
-const BookAvtale = (
+const BookAvtale = (history: H.History) => (
     <div style={{display: 'flex', justifyContent: 'flex-end'}}>
         <div
             style={{
                 top: '-2.5rem',
                 right: '1rem',
                 position: 'relative',
+                cursor: 'pointer'
             }}
+            onClick={() => history.push('/booking')}
         >
             <Button
                 size="medium"
@@ -86,7 +91,6 @@ const BookAvtale = (
                 aria-label="booking"
             >
                 <ScheduleIcon/>
-
             </Button>
             <Typography variant="caption">BOOK EN AVTALE</Typography>
             <StarIcon style={{fill: '#9E9E9E'}}/>
@@ -96,28 +100,16 @@ const BookAvtale = (
     </div>
 );
 
-export default class Forside extends React.Component {
+export default class Forside extends React.Component<RouteComponentProps<{}>> {
     render() {
         return (
             <div>
                 <Navigering/>
 
-                <StyledHeader>
-                    <Typography
-                        variant="headline"
-                        style={{
-                            color: 'black'
-                        }}
-                    >
-                        Vi hjelper deg med fotografering
-                    </Typography>
-                    <p>
-                        Vi tilbyr kvalitets fotografering og gode priser til dine behov
-                    </p>
-                </StyledHeader>
+
 
                 <div style={{maxWidth: '375px', margin: '0 auto'}}>
-                    <Card style={{margin: '20px 0'}}>
+                    <Card style={{margin: '0 0 20px 0'}}>
                         <CardMedia
                             style={{
                                 height: 0,
@@ -126,7 +118,7 @@ export default class Forside extends React.Component {
                             image={bilde1}
                             title="Portrett"
                         >
-                            {BookAvtale}
+                            {BookAvtale(this.props.history)}
                         </CardMedia>
 
                         <CardContent style={style.cardcontent}>
@@ -144,7 +136,6 @@ export default class Forside extends React.Component {
                             </IconButton>
                         </CardActions>
                     </Card>
-
                     <Card style={{margin: '20px 0'}}>
                         <CardMedia
                             style={{
@@ -154,7 +145,7 @@ export default class Forside extends React.Component {
                             image={bilde2}
                             title="Familie"
                         >
-                            {BookAvtale}
+                            {BookAvtale(this.props.history)}
                         </CardMedia>
                         <CardContent style={style.cardcontent}>
                             <Typography variant="subheading" component="h2">
@@ -170,6 +161,20 @@ export default class Forside extends React.Component {
                             </IconButton>
                         </CardActions>
                     </Card>
+
+                    <StyledHeader>
+                        <Typography
+                            variant="headline"
+                            style={{
+                                color: 'black'
+                            }}
+                        >
+                            Vi hjelper deg med fotografering
+                        </Typography>
+                        <p>
+                            Vi tilbyr kvalitets fotografering og gode priser til dine behov
+                        </p>
+                    </StyledHeader>
 
                 </div>
                 <StyledContent>

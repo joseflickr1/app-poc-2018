@@ -4,6 +4,8 @@ import Toolbar from 'material-ui/Toolbar';
 import IconButton from 'material-ui/IconButton';
 import ArrowBack from '@material-ui/icons/ArrowBack';
 import Typography from 'material-ui/Typography';
+import { RouteComponentProps } from 'react-router';
+import { withRouter } from 'react-router-dom';
 
 const style = {
     appbar: {
@@ -11,12 +13,16 @@ const style = {
         color: 'white',
     },
 };
-const Navigering = () => {
+const Navigering = ({history}: RouteComponentProps<{}>) => {
     return (
         <AppBar position="static" style={style.appbar}>
             <Toolbar style={{display: 'flex', justifyContent: 'space-between'}}>
                 <div>
-                    <IconButton color="inherit" aria-label="tilbake">
+                    <IconButton
+                        color="inherit"
+                        aria-label="tilbake"
+                        onClick={() => history.push('/')}
+                    >
                         <ArrowBack/>
                     </IconButton>
                 </div>
@@ -26,6 +32,7 @@ const Navigering = () => {
                         style={{
                             color: 'white'
                         }}
+
                     >
                         BOOKING
                     </Typography>
@@ -35,4 +42,4 @@ const Navigering = () => {
     );
 };
 
-export default Navigering;
+export default withRouter(Navigering);

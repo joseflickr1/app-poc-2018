@@ -13,7 +13,7 @@ const style = {
     appbar: {
         backgroundColor: '#00AA8D',
         color: 'white',
-        height: '9rem'
+        height: '8rem'
     },
     logoContainer: {
         border: '2px solid',
