@@ -20,8 +20,10 @@ const style = {
     cardcontent: {paddingBottom: '0'}
 };
 const StyledHeader = styled.div`
-    width: 100%;
+    max-width: 375px;
     text-align: center;
+    margin: 0 auto;
+    padding: 1rem 1rem 0 1rem;
     svg.logo {
         width: 6rem;
         height: 6rem;
@@ -30,13 +32,13 @@ const StyledHeader = styled.div`
 `;
 
 const StyledContent = styled.div`
-    max-width: 400rem;
-    margin: 0 25%;
-    padding: 2rem 0;
-    
-    @media (max-width: 768px) {
-        max-width: 100%;
-        margin: 0 1rem;
+    max-width: 375px;
+    margin: 0 auto;
+    padding: 1rem 0;
+        
+    @media (min-width: 768px) {
+        max-width: 768px;
+        margin: 0 auto;
     }
     
     .ul-liste {
@@ -51,44 +53,47 @@ const StyledContent = styled.div`
 `;
 
 const StyledFooter = styled.div`
-    max-width: 400rem;
-    margin: 0 25%;
     text-align: right;
+    max-width: 375px;
+    margin: 0 auto;
+    padding: 1rem 0;
+        
+    @media (min-width: 768px) {
+        max-width: 768px;
+        margin: 0 auto;
+    }
     
     > p {
         padding: 0;
         margin: 0;
     }
-    
-    @media (max-width: 768px) {
-        max-width: 100%;
-        margin: 0 1rem;
-    }
+
 `;
 
 const BookAvtale = (
-    <div
-        style={{
-            top: '-2.5rem',
-            position: 'relative',
-            left: '16rem',
-            width: '7rem'
-        }}
-    >
-        <Button
-            size="medium"
-            style={style.bookingKnapp}
-            variant="fab"
-            color="secondary"
-            aria-label="booking"
+    <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+        <div
+            style={{
+                top: '-2.5rem',
+                right: '1rem',
+                position: 'relative',
+            }}
         >
-            <ScheduleIcon/>
+            <Button
+                size="medium"
+                style={style.bookingKnapp}
+                variant="fab"
+                color="secondary"
+                aria-label="booking"
+            >
+                <ScheduleIcon/>
 
-        </Button>
-        <Typography variant="caption">BOOK EN AVTALE</Typography>
-        <StarIcon style={{fill: '#9E9E9E'}}/>
-        <StarIcon style={{fill: '#9E9E9E'}}/>
-        <StarIcon style={{fill: '#9E9E9E'}}/>
+            </Button>
+            <Typography variant="caption">BOOK EN AVTALE</Typography>
+            <StarIcon style={{fill: '#9E9E9E'}}/>
+            <StarIcon style={{fill: '#9E9E9E'}}/>
+            <StarIcon style={{fill: '#9E9E9E'}}/>
+        </div>
     </div>
 );
 
@@ -97,7 +102,22 @@ export default class Forside extends React.Component {
         return (
             <div>
 
-                <div style={{width: '375px', margin: '0 auto'}}>
+                <StyledHeader>
+
+                    <Typography
+                        variant="headline"
+                        style={{
+                            color: 'black'
+                        }}
+                    >
+                        Vi hjelper deg med fotografering
+                    </Typography>
+                    <p>
+                        Vi tilbyr kvalitets fotografering og gode priser til dine behov
+                    </p>
+                </StyledHeader>
+
+                <div style={{maxWidth: '375px', margin: '0 auto'}}>
 
                     <Card style={{margin: '20px 0'}}>
                         <CardMedia
@@ -106,14 +126,14 @@ export default class Forside extends React.Component {
                                 paddingTop: '56.25%', // 16:9
                             }}
                             image={bilde1}
-                            title="Contemplative Reptile"
+                            title="Portrett"
                         >
                             {BookAvtale}
                         </CardMedia>
 
                         <CardContent style={style.cardcontent}>
                             <Typography variant="subheading" component="h2">
-                                Portrett
+                                Portrett fotografering
                             </Typography>
                             <Typography style={{color: '#9E9E9E'}} component="p">
                                 Canon EOS 700D
@@ -134,13 +154,13 @@ export default class Forside extends React.Component {
                                 paddingTop: '56.25%', // 16:9
                             }}
                             image={bilde2}
-                            title="Contemplative Reptile"
+                            title="Familie"
                         >
                             {BookAvtale}
                         </CardMedia>
                         <CardContent style={style.cardcontent}>
                             <Typography variant="subheading" component="h2">
-                                Portrett
+                                Familie fotografering
                             </Typography>
                             <Typography style={{color: '#9E9E9E'}} component="p">
                                 Canon EOS 700D
@@ -154,22 +174,6 @@ export default class Forside extends React.Component {
                     </Card>
 
                 </div>
-
-                <StyledHeader>
-
-                    <Typography
-                        variant="display2"
-                        style={{
-                            color: 'black'
-                        }}
-                    >
-                        Vi hjelper deg med fotografering
-                    </Typography>
-                    <p>
-                        Vi tilbyr kvalitets fotografering og gode priser til dine behov
-                    </p>
-
-                </StyledHeader>
                 <StyledContent>
                     <p>
                         Vi er et lite selskap og som er i startfasen. Vi tilbyr kvalitet og profesjonell fotografering
