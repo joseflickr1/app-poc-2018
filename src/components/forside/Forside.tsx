@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import ScheduleIcon from '@material-ui/icons/Schedule';
 import StarIcon from '@material-ui/icons/StarHalf';
 import Button from 'material-ui/Button';
-import Card, {CardActions, CardContent, CardMedia} from 'material-ui/Card';
+import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import IconButton from 'material-ui/IconButton';
 
@@ -66,29 +66,31 @@ const StyledFooter = styled.div`
     }
 `;
 
-const BookAvtale = <div
-    style={{
-        top: '-2.5rem',
-        position: 'relative',
-        left: '16rem',
-        width: '7rem'
-    }}
->
-    <Button
-        size="medium"
-        style={style.bookingKnapp}
-        variant="fab"
-        color="secondary"
-        aria-label="booking"
+const BookAvtale = (
+    <div
+        style={{
+            top: '-2.5rem',
+            position: 'relative',
+            left: '16rem',
+            width: '7rem'
+        }}
     >
-        <ScheduleIcon/>
+        <Button
+            size="medium"
+            style={style.bookingKnapp}
+            variant="fab"
+            color="secondary"
+            aria-label="booking"
+        >
+            <ScheduleIcon/>
 
-    </Button>
-    <Typography variant="caption">BOOK EN AVTALE</Typography>
-    <StarIcon style={{fill: '#9E9E9E'}}/>
-    <StarIcon style={{fill: '#9E9E9E'}}/>
-    <StarIcon style={{fill: '#9E9E9E'}}/>
-</div>
+        </Button>
+        <Typography variant="caption">BOOK EN AVTALE</Typography>
+        <StarIcon style={{fill: '#9E9E9E'}}/>
+        <StarIcon style={{fill: '#9E9E9E'}}/>
+        <StarIcon style={{fill: '#9E9E9E'}}/>
+    </div>
+);
 
 export default class Forside extends React.Component {
     render() {
@@ -166,7 +168,6 @@ export default class Forside extends React.Component {
                     <p>
                         Vi tilbyr kvalitets fotografering og gode priser til dine behov
                     </p>
-
 
                 </StyledHeader>
                 <StyledContent>
