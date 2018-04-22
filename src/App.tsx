@@ -5,7 +5,7 @@ import { firebaseAuth } from './config/constants';
 
 import Home from './components/forside/Home';
 import Forside from './components/forside/Forside';
-import Navigering from './components/navigering/Navigering';
+import Booking from './components/booking/Booking';
 
 interface PR {
     authed: boolean;
@@ -52,9 +52,13 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                 <div>
-                    <Navigering/>
                     <Switch>
                         <Route path="/" exact={true} component={Forside}/>
+                        <PublicRoute
+                            authed={this.state.authed}
+                            component={Booking}
+                            path="/booking"
+                        />
                         <PublicRoute
                             authed={this.state.authed}
                             component={Home}

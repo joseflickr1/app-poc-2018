@@ -7,6 +7,7 @@ import Button from 'material-ui/Button';
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import IconButton from 'material-ui/IconButton';
+import Navigering from "../navigering/Navigering";
 
 const bilde1 = require('./img/spencer-backman-488537-unsplash.png');
 const bilde2 = require('./img/etienne-boulanger-265266-unsplash.png');
@@ -99,9 +100,9 @@ export default class Forside extends React.Component {
     render() {
         return (
             <div>
+                <Navigering/>
 
                 <StyledHeader>
-
                     <Typography
                         variant="headline"
                         style={{
@@ -116,7 +117,6 @@ export default class Forside extends React.Component {
                 </StyledHeader>
 
                 <div style={{maxWidth: '375px', margin: '0 auto'}}>
-
                     <Card style={{margin: '20px 0'}}>
                         <CardMedia
                             style={{
