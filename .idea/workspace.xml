@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb5e096b-a92e-4d63-aefb-06cd23cf9c1d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/forside/spencer-backman-488537-unsplash.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/forside/img/spencer-backman-488537-unsplash.png" afterPath="$PROJECT_DIR$/src/components/forside/img/spencer-backman-488537-unsplash.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/BOOKING.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/booking/navigering/Navigering.tsx" afterPath="$PROJECT_DIR$/src/components/booking/navigering/Navigering.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/forside/Forside.tsx" afterPath="$PROJECT_DIR$/src/components/forside/Forside.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/navigering/Navigering.tsx" afterPath="$PROJECT_DIR$/src/components/navigering/Navigering.tsx" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,18 +45,6 @@
         </entry>
       </file>
       <file leaf-file-name="index.d.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/@types/react-router-dom/index.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-              <folding>
-                <element signature="e#320#357#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.d.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node_modules/@types/react-router/index.d.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
@@ -90,14 +74,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Navigering.tsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Navigering.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/navigering/Navigering.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="11" lean-forward="true" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+            <state relative-caret-position="423">
+              <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BOOKING.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/BOOKING.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -193,6 +187,7 @@
         <option value="$PROJECT_DIR$/src/components/booking/Booking.tsx" />
         <option value="$PROJECT_DIR$/src/components/forside/Forside.tsx" />
         <option value="$PROJECT_DIR$/src/components/navigering/Navigering.tsx" />
+        <option value="$PROJECT_DIR$/src/components/BOOKINGjson.json" />
       </list>
     </option>
   </component>
@@ -326,43 +321,6 @@
               <item name="app-poc-2018" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app-poc-2018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app-poc-2018" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="booking" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app-poc-2018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app-poc-2018" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="booking" type="462c0819:PsiDirectoryNode" />
-              <item name="navigering" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app-poc-2018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app-poc-2018" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="forside" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app-poc-2018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app-poc-2018" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="forside" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app-poc-2018" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app-poc-2018" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="navigering" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -643,11 +601,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524401623685</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="booking wip">
+      <created>1524421099709</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1524421099709</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58921000" />
+    <option name="totallyTimeSpent" value="60140000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="751" extended-state="6" />
@@ -751,7 +716,8 @@
     <MESSAGE value="no gtag" />
     <MESSAGE value="ny design" />
     <MESSAGE value="ny booking" />
-    <option name="LAST_COMMIT_MESSAGE" value="ny booking" />
+    <MESSAGE value="booking wip" />
+    <option name="LAST_COMMIT_MESSAGE" value="booking wip" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -760,13 +726,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/registerServiceWorker.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="56" lean-forward="false" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/index.tsx" />
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -1114,11 +1073,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/navigering/Navigering.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="11" lean-forward="true" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+        <state relative-caret-position="423">
+          <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/BOOKING.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
