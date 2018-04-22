@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import { RouteProps } from 'react-router';
 import { firebaseAuth } from './config/constants';
 
-import Home from './components/Home';
-import Forside from './components/Forside';
+import Home from './components/forside/Home';
+import Forside from './components/forside/Forside';
 import Navigering from './components/navigering/Navigering';
 
 interface PR {
