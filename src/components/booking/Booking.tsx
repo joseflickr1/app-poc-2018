@@ -2,6 +2,17 @@ import * as React from 'react';
 import Typography from 'material-ui/Typography';
 import Card, { CardContent, CardMedia } from 'material-ui/Card';
 import Navigering from './navigering/Navigering';
+import TextField from 'material-ui/TextField';
+import Button from 'material-ui/Button';
+
+const style = {
+    TextField: {
+        width: '100%',
+    },
+    button: {
+        marginTop: '1rem'
+    }
+};
 
 const bilde1 = require('../forside/img/spencer-backman-488537-unsplash.png');
 
@@ -31,6 +42,30 @@ const Booking = () => {
 
                     </CardContent>
                 </Card>
+
+                <form>
+                    <TextField
+                        id="navn"
+                        label="Navn"
+                        margin="normal"
+                        style={style.TextField}
+                    />
+                    <TextField
+                        id="epost"
+                        label="E-post"
+                        margin="normal"
+                        style={style.TextField}
+                    />
+                    <TextField
+                        id="hvemskaltasbildeav"
+                        label="Hvem skal tas bilde av"
+                        margin="normal"
+                        style={style.TextField}
+                    />
+                    <Button variant="raised" size="medium" color="primary" style={style.button}>
+                        Logg inn
+                    </Button>
+                </form>
 
             </div>
         </div>

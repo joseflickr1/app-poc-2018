@@ -11,7 +11,6 @@ import Navigering from '../navigering/Navigering';
 import { RouteComponentProps } from 'react-router';
 import * as H from 'history';
 
-
 const bilde1 = require('./img/spencer-backman-488537-unsplash.png');
 const bilde2 = require('./img/etienne-boulanger-265266-unsplash.png');
 const style = {
@@ -106,10 +105,8 @@ export default class Forside extends React.Component<RouteComponentProps<{}>> {
             <div>
                 <Navigering/>
 
-
-
                 <div style={{maxWidth: '375px', margin: '0 auto'}}>
-                    <Card style={{margin: '0 0 20px 0'}}>
+                    <Card style={{margin: '10px 0'}}>
                         <CardMedia
                             style={{
                                 height: 0,
@@ -136,7 +133,7 @@ export default class Forside extends React.Component<RouteComponentProps<{}>> {
                             </IconButton>
                         </CardActions>
                     </Card>
-                    <Card style={{margin: '20px 0'}}>
+                    <Card style={{margin: '10px 0'}}>
                         <CardMedia
                             style={{
                                 height: 0,
