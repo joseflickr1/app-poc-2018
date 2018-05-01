@@ -1,14 +1,20 @@
 import * as React from 'react';
 import Button from 'material-ui/Button';
-import Typography from 'material-ui/Typography';
 import styled from 'styled-components';
 import TextField from 'material-ui/TextField';
-import { auth } from '../../helpers/auth';
+import { auth } from '../helpers/auth';
+import NavigeringEnkel from './navigering/NavigeringEnkel';
 
 const StyledBlockDiv = styled.div`
-    width: 100%;
-    text-align: center;
+    max-width: 320px;
+    margin: 4rem auto;
 `;
+
+const style = {
+    TextField: {
+        width: '100%'
+    }
+}
 
 function setErrorMsg(error: Error) {
     return {
@@ -16,13 +22,11 @@ function setErrorMsg(error: Error) {
     };
 }
 
-export default class Home extends React.Component {
+export default class Registrering extends React.Component {
     email: HTMLInputElement;
     pw: HTMLInputElement;
     state = { registerError: null };
     handleSubmit = () => {
-        /*tslint:disable-next-line*/
-        //console.log('this.email', this.email.value);
          auth(this.email.value, this.pw.value)
              .catch((err: Error) => {
                  this.setState(setErrorMsg(err));
@@ -32,9 +36,7 @@ export default class Home extends React.Component {
     render() {
         return (
             <div>
-                <StyledBlockDiv>
-                    <Typography variant="display3">Logg inn</Typography>
-                </StyledBlockDiv>
+                <NavigeringEnkel tittel="REGISTRERING"/>
                 <StyledBlockDiv>
                     {this.state.registerError}
                     <form>
@@ -43,6 +45,7 @@ export default class Home extends React.Component {
                             label="E-post"
                             margin="normal"
                             inputProps={{ref: (email: HTMLInputElement) => this.email = email}}
+                            style={style.TextField}
                         />
                         <TextField
                             id="passord"
@@ -51,6 +54,7 @@ export default class Home extends React.Component {
                             autoComplete="current-password"
                             margin="normal"
                             inputProps={{ref: (pw: HTMLInputElement) => this.pw = pw}}
+                            style={style.TextField}
                         />
                         <Button
                             variant="raised"

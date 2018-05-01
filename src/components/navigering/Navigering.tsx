@@ -39,9 +39,9 @@ const Navigering = () => {
                         </IconButton>
                         <Button
                             color="inherit"
-                            href="/login"
+                            href="/logginn"
                         >
-                            Login
+                            LOGG INN
                         </Button>
                     </div>
                     <div style={{textAlign: 'center'}}>

@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import { RouteProps } from 'react-router';
 import { firebaseAuth } from './config/constants';
 
-import Home from './components/forside/Home';
+import Registrering from './components/Registrering';
+import Logginn from './components/Logginn';
 import Forside from './components/forside/Forside';
 import Booking from './components/booking/Booking';
 
@@ -61,8 +62,13 @@ class App extends React.Component {
                         />
                         <PublicRoute
                             authed={this.state.authed}
-                            component={Home}
-                            path="/login"
+                            component={Registrering}
+                            path="/registrer"
+                        />
+                        <PublicRoute
+                            authed={this.state.authed}
+                            component={Logginn}
+                            path="/logginn"
                         />
                         <Route render={() => <h3>No Match</h3>}/>
                     </Switch>

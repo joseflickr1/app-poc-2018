@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Typography from 'material-ui/Typography';
 import Card, { CardContent, CardMedia } from 'material-ui/Card';
-import Navigering from './navigering/Navigering';
+import NavigeringEnkel from '../navigering/NavigeringEnkel';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 
@@ -9,7 +9,7 @@ const style = {
     TextField: {
         width: '100%',
     },
-    button: {
+    Button: {
         marginTop: '1rem'
     }
 };
@@ -19,7 +19,7 @@ const bilde1 = require('../forside/img/spencer-backman-488537-unsplash.png');
 const Booking = () => {
     return (
         <div>
-            <Navigering/>
+            <NavigeringEnkel tittel="BOOKING"/>
 
             <div style={{maxWidth: '375px', margin: '0 auto'}}>
                 <Card>
@@ -62,7 +62,7 @@ const Booking = () => {
                         margin="normal"
                         style={style.TextField}
                     />
-                    <Button variant="raised" size="medium" color="primary" style={style.button}>
+                    <Button variant="raised" size="medium" color="primary" style={style.Button}>
                         Logg inn
                     </Button>
                 </form>

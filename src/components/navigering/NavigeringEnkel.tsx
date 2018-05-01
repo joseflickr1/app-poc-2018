@@ -13,7 +13,12 @@ const style = {
         color: 'white',
     },
 };
-const Navigering = ({history}: RouteComponentProps<{}>) => {
+
+interface EgenProps {
+    tittel: string;
+}
+
+const NavigeringEnkel = ({tittel, history}: EgenProps & RouteComponentProps<{}>) => {
     return (
         <AppBar position="static" style={style.appbar}>
             <Toolbar style={{display: 'flex', justifyContent: 'space-between'}}>
@@ -21,7 +26,7 @@ const Navigering = ({history}: RouteComponentProps<{}>) => {
                     <IconButton
                         color="inherit"
                         aria-label="tilbake"
-                        onClick={() => history.push('/')}
+                        onClick={() => history.goBack()}
                     >
                         <ArrowBack/>
                     </IconButton>
@@ -34,7 +39,7 @@ const Navigering = ({history}: RouteComponentProps<{}>) => {
                         }}
 
                     >
-                        BOOKING
+                        {tittel}
                     </Typography>
                 </div>
             </Toolbar>
@@ -42,4 +47,4 @@ const Navigering = ({history}: RouteComponentProps<{}>) => {
     );
 };
 
-export default withRouter(Navigering);
+export default withRouter(NavigeringEnkel);
