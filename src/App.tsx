@@ -2,7 +2,7 @@ import * as React from 'react';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import { RouteProps } from 'react-router';
 import { firebaseAuth } from './config/constants';
-
+import * as firebase from 'firebase';
 import Registrering from './components/Registrering';
 import Logginn from './components/Logginn';
 import Forside from './components/forside/Forside';
@@ -28,7 +28,7 @@ class App extends React.Component {
     };
 
     componentDidMount() {
-        this.removeListener = firebaseAuth().onAuthStateChanged((user: { email: 'string' }) => {
+        this.removeListener = firebaseAuth().onAuthStateChanged((user: firebase.User) => {
             if (user) {
                 this.setState({
                     authed: true,

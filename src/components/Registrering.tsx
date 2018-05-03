@@ -14,7 +14,7 @@ const style = {
     TextField: {
         width: '100%'
     }
-}
+};
 
 function setErrorMsg(error: Error) {
     return {

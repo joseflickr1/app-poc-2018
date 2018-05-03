@@ -6,7 +6,6 @@ import IconButton from 'material-ui/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Typography from 'material-ui/Typography';
 
-
 const logo = require('./logo.svg');
 
 const style = {
