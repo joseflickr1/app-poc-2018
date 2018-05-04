@@ -40,7 +40,11 @@ const StyledContent = styled.div`
     padding: 1rem;
         
     @media (min-width: 768px) {
-        max-width: 768px;
+        max-width: 500px;
+    }
+    
+    > p {
+        padding-bottom: 10px;
     }
     
     .ul-liste {
@@ -162,44 +166,41 @@ export default class Forside extends React.Component<RouteComponentProps<{}>> {
                     <StyledHeader>
                         <Typography
                             variant="headline"
-                            style={{
-                                color: 'black'
-                            }}
                         >
                             Vi hjelper deg med fotografering
                         </Typography>
-                        <p>
+                        <Typography>
                             Vi tilbyr kvalitets fotografering og gode priser til dine behov
-                        </p>
+                        </Typography>
                     </StyledHeader>
 
                 </div>
                 <StyledContent>
-                    <p>
+                    <Typography>
                         Vi er et lite selskap og som er i startfasen. Vi tilbyr kvalitet og profesjonell fotografering
                         til private og bedrifter.
-                    </p>
-                    <p>
+                    </Typography>
+                    <Typography>
                         Vi har hatt fotografering som en hobby i mange år og har opparbeidet
                         god kunnskap og kompetanse.
-                    </p>
-                    <p>
+                    </Typography>
+                    <Typography>
                         Vi ønsker nå å tilby denne tjenesten til dere.
                         Vår viktigste oppgave er å gi våre kunder gode opplevelser og tjenester.
-                    </p>
+                    </Typography>
                     <ul className="ul-liste">
-                        <li className="li-liste">Portrett fotografering</li>
-                        <li className="li-liste">Familie fotografering</li>
-                        <li className="li-liste">Komersielle oppdrag</li>
+                        <li className="li-liste"><Typography>Portrett fotografering</Typography></li>
+                        <li className="li-liste"><Typography>Familie fotografering</Typography></li>
+                        <li className="li-liste"><Typography>Komersielle oppdrag</Typography></li>
                     </ul>
                 </StyledContent>
                 <StyledFooter>
-                    <p>
+                    <Typography>
                         Kontakt oss for mer informasjon
-                    </p>
-                    <p>
+                    </Typography>
+                    <Typography>
                         info@fotohjelp.no
-                    </p>
+                    </Typography>
                 </StyledFooter>
             </div>
         );
