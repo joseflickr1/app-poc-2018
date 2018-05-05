@@ -4,6 +4,7 @@ import Card, { CardContent, CardMedia } from 'material-ui/Card';
 import NavigeringEnkel from '../navigering/NavigeringEnkel';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
+import { booking } from '../../helpers/booking';
 
 const style = {
     TextField: {
@@ -17,6 +18,10 @@ const style = {
 const bilde1 = require('../forside/img/spencer-backman-488537-unsplash.png');
 
 const Booking = () => {
+    const handleSubmit = () => {
+        booking('email', 'foto av');
+    };
+
     return (
         <div>
             <NavigeringEnkel tittel="BOOKING"/>
@@ -62,8 +67,14 @@ const Booking = () => {
                         margin="normal"
                         style={style.TextField}
                     />
-                    <Button variant="raised" size="medium" color="primary" style={style.Button}>
-                        Logg inn
+                    <Button
+                        variant="raised"
+                        size="medium"
+                        color="primary"
+                        style={style.Button}
+                        onClick={handleSubmit}
+                    >
+                        Book avtale
                     </Button>
                 </form>
 
