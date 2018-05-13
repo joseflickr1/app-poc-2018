@@ -5,6 +5,7 @@ import NavigeringEnkel from '../navigering/NavigeringEnkel';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 import { booking } from '../../helpers/booking';
+import { firebaseAuth } from '../../config/constants';
 
 const style = {
     TextField: {
@@ -19,7 +20,10 @@ const bilde1 = require('../forside/img/spencer-backman-488537-unsplash.png');
 
 const Booking = () => {
     const handleSubmit = () => {
-        booking('email', 'foto av');
+        const user = firebaseAuth().currentUser;
+        if (user) {
+            booking('email', 'foto av', user.uid);
+        }
     };
 
     return (

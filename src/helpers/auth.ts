@@ -25,3 +25,7 @@ export function saveUser (user: {email: string, uid: string}) {
     })
     .then(() => user);
 }
+
+export const isAuthenticated = () => {
+    return !!firebaseAuth().currentUser;
+};

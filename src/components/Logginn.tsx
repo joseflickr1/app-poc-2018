@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import TextField from 'material-ui/TextField';
 import { login } from '../helpers/auth';
 import NavigeringEnkel from './navigering/NavigeringEnkel';
+import { RouteComponentProps } from 'react-router';
 
 const StyledBlockDiv = styled.div`
     max-width: 320px;
@@ -22,12 +23,19 @@ function setErrorMsg(error: Error) {
     };
 }
 
-export default class Registrering extends React.Component {
+export default class Registrering extends React.Component<RouteComponentProps<{}>> {
     email: HTMLInputElement;
     pw: HTMLInputElement;
     state = { registerError: null };
+
     handleSubmit = () => {
-         login(this.email.value, this.pw.value)
+        login(this.email.value, this.pw.value)
+             .then(() => {
+                const { history, location } = this.props;
+                const { state } = location;
+                const { from } = state;
+                history.push(from || '/');
+             })
              .catch((err: Error) => {
                  this.setState(setErrorMsg(err));
              });

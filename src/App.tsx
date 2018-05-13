@@ -1,12 +1,21 @@
 import * as React from 'react';
+import * as firebase from 'firebase';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import { RouteProps } from 'react-router';
-import { firebaseAuth } from './config/constants';
-import * as firebase from 'firebase';
 import Registrering from './components/Registrering';
 import Logginn from './components/Logginn';
 import Forside from './components/forside/Forside';
 import Booking from './components/booking/Booking';
+import { isAuthenticated } from './helpers/auth';
+import { firebaseAuth } from './config/constants';
+import CircularProgress from 'material-ui/Progress/CircularProgress';
+
+const style = {
+    circlularProgress: {
+        maxWidth: '38px',
+        margin: '6vh auto'
+    }
+};
 
 interface PR {
     authed: boolean;
@@ -20,6 +29,15 @@ function PublicRoute({authed, ...rest}: PR & RouteProps) {
     }
 }
 
+function PrivateRoute({authed, ...rest}: PR & RouteProps) {
+    if (authed || isAuthenticated()) {
+        return <Route {...rest} component={rest.component}/>;
+    } else {
+        return <Redirect to={{pathname: '/logginn', state: {from: rest.location}}}/>;
+    }
+
+}
+
 class App extends React.Component {
     removeListener: () => void;
     state = {
@@ -27,7 +45,7 @@ class App extends React.Component {
         loading: true,
     };
 
-    componentDidMount() {
+    componentWillMount() {
         this.removeListener = firebaseAuth().onAuthStateChanged((user: firebase.User) => {
             if (user) {
                 this.setState({
@@ -43,6 +61,7 @@ class App extends React.Component {
                 });
             }
         });
+
     }
 
     componentWillUnmount() {
@@ -50,12 +69,14 @@ class App extends React.Component {
     }
 
     render() {
+        if (this.state.loading) { return <div style={style.circlularProgress}><CircularProgress/></div>; }
+
         return (
             <BrowserRouter>
                 <div>
                     <Switch>
                         <Route path="/" exact={true} component={Forside}/>
-                        <PublicRoute
+                        <PrivateRoute
                             authed={this.state.authed}
                             component={Booking}
                             path="/booking"
