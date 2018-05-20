@@ -29,3 +29,16 @@ export function saveUser (user: {email: string, uid: string}) {
 export const isAuthenticated = () => {
     return !!firebaseAuth().currentUser;
 };
+
+// Hent e-posten
+export const hentEpost = () => {
+    const user = firebaseAuth().currentUser;
+    return user ? user.email || '' : 'Hei';
+};
+
+export const hentForsteBokstavEpost = () => {
+    const user = firebaseAuth().currentUser;
+    const epost = user ? user.email || '' : 'Hei';
+
+    return epost.substring(0, 1);
+};

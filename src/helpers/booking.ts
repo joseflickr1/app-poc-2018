@@ -1,4 +1,4 @@
-import { ref } from '../config/constants';
+import { firebaseAuth, ref } from '../config/constants';
 
 export function booking (navn: string, fotograferingAv: string, userId: string) {
     const date = new Date();
@@ -6,4 +6,15 @@ export function booking (navn: string, fotograferingAv: string, userId: string) 
         navn: navn,
         fotograferingAv : fotograferingAv
     });
+}
+
+export function hentBooking () {
+    const user = firebaseAuth().currentUser;
+    // tslint:disable
+    if (user) {
+        return ref.child('booking/' + user.uid).once('value')
+    } else {
+        return Promise.resolve()
+    }
+
 }

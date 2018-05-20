@@ -9,6 +9,7 @@ import Booking from './components/booking/Booking';
 import { isAuthenticated } from './helpers/auth';
 import { firebaseAuth } from './config/constants';
 import CircularProgress from 'material-ui/Progress/CircularProgress';
+import Profil from './components/profil/Profil';
 
 const style = {
     circlularProgress: {
@@ -80,6 +81,11 @@ class App extends React.Component {
                             authed={this.state.authed}
                             component={Booking}
                             path="/booking"
+                        />
+                        <PrivateRoute
+                            authed={this.state.authed}
+                            component={Profil}
+                            path="/profil"
                         />
                         <PublicRoute
                             authed={this.state.authed}
