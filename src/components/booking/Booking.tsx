@@ -2,8 +2,10 @@ import * as React from 'react';
 import NavigeringEnkel from '../navigering/NavigeringEnkel';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
+import styled from 'styled-components';
 import { booking } from '../../helpers/booking';
 import { firebaseAuth } from '../../config/constants';
+import { RouteComponentProps } from 'react-router';
 
 const style = {
     TextField: {
@@ -14,11 +16,18 @@ const style = {
     }
 };
 
-class Booking extends React.Component {
+const StyledBlockDiv = styled.div`
+    max-width: 300px;
+    margin: 4rem auto;
+`;
+
+class Booking extends React.Component<RouteComponentProps<{}>> {
     navn: HTMLInputElement;
     fotoAv: HTMLInputElement;
 
     handleSubmit = () => {
+        const { history } = this.props;
+        history.push('/profil');
         const user = firebaseAuth().currentUser;
         if (user) {
             booking(this.navn.value, this.fotoAv.value, user.uid);
@@ -30,7 +39,7 @@ class Booking extends React.Component {
             <>
                 <NavigeringEnkel tittel="BOOKING"/>
 
-                <div style={{maxWidth: '375px', margin: '0 auto'}}>
+                <StyledBlockDiv>
                     <form>
                         <TextField
                             id="navn"
@@ -57,7 +66,7 @@ class Booking extends React.Component {
                         </Button>
                     </form>
 
-                </div>
+                </StyledBlockDiv>
             </>
         );
     }

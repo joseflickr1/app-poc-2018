@@ -7,7 +7,7 @@ import NavigeringEnkel from './navigering/NavigeringEnkel';
 import { RouteComponentProps } from 'react-router';
 
 const StyledBlockDiv = styled.div`
-    max-width: 320px;
+    max-width: 300px;
     margin: 4rem auto;
 `;
 

@@ -9,7 +9,7 @@ import Paper from 'material-ui/Paper';
 import LinearProgress from 'material-ui/Progress/LinearProgress';
 
 const StyledBlockDiv = styled.div`
-    max-width: 320px;
+    max-width: 300px;
     margin: 4rem auto;
 `;
 

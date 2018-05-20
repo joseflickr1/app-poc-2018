@@ -6,7 +6,7 @@ import { auth } from '../helpers/auth';
 import NavigeringEnkel from './navigering/NavigeringEnkel';
 
 const StyledBlockDiv = styled.div`
-    max-width: 320px;
+    max-width: 300px;
     margin: 4rem auto;
 `;
 
