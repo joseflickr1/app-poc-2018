@@ -24,13 +24,14 @@ const StyledBlockDiv = styled.div`
 class Booking extends React.Component<RouteComponentProps<{}>> {
     navn: HTMLInputElement;
     fotoAv: HTMLInputElement;
+    dato: HTMLInputElement;
 
     handleSubmit = () => {
         const { history } = this.props;
         history.push('/profil');
         const user = firebaseAuth().currentUser;
         if (user) {
-            booking(this.navn.value, this.fotoAv.value, user.uid);
+            booking(this.dato.value, this.navn.value, this.fotoAv.value, user.uid);
         }
     }
 
@@ -38,9 +39,15 @@ class Booking extends React.Component<RouteComponentProps<{}>> {
         return (
             <>
                 <NavigeringEnkel tittel="BOOKING"/>
-
                 <StyledBlockDiv>
                     <form>
+                        <TextField
+                            id="date"
+                            label="Dato"
+                            type="date"
+                            defaultValue="2017-05-24"
+                            inputProps={{ref: (dato: HTMLInputElement) => this.dato = dato}}
+                        />
                         <TextField
                             id="navn"
                             label="Navn"

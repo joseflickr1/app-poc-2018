@@ -32,7 +32,7 @@ const style = {
 class Profil extends React.Component {
 
     state = {
-        bookings: [{navn: '', fotograferingAv: ''}],
+        bookings: [{dato: '', navn: '', fotograferingAv: ''}],
         loading: true
     };
 
@@ -81,7 +81,9 @@ class Profil extends React.Component {
                                 return (
                                     <Paper style={style.paper} key={v.navn + '-' + i}>
                                         <Typography variant="subheading">
-                                            {v.navn} - {v.fotograferingAv}
+
+                                            {new Date(v.dato).getDate()}.
+                                            {new Date(v.dato).getMonth()} - {v.navn} - {v.fotograferingAv}
                                         </Typography>
                                     </Paper>
                                 );
