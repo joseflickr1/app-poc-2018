@@ -6,6 +6,9 @@ import styled from 'styled-components';
 import { booking } from '../../helpers/booking';
 import { firebaseAuth } from '../../config/constants';
 import { RouteComponentProps } from 'react-router';
+import { DateRangePicker, FocusedInputShape } from 'react-dates';
+import 'react-dates/initialize';
+import 'react-dates/lib/css/_datepicker.css';
 
 const style = {
     TextField: {
@@ -21,10 +24,36 @@ const StyledBlockDiv = styled.div`
     margin: 4rem auto;
 `;
 
-class Booking extends React.Component<RouteComponentProps<{}>> {
+//tslint:disable
+class Booking extends React.Component<RouteComponentProps<{}>, any> {
     navn: HTMLInputElement;
     fotoAv: HTMLInputElement;
     dato: HTMLInputElement;
+
+    //tslint:disable
+    constructor(props: any) {
+        super(props);
+
+        this.state = {
+            focusedInput: null,
+            startDate: null,
+            endDate: null,
+        };
+
+        this.onDatesChange = this.onDatesChange.bind(this);
+        this.onFocusChange = this.onFocusChange.bind(this);
+    }
+    //tslint:disable
+    onDatesChange({ startDate, endDate }: any) {
+        this.setState({
+            startDate: startDate && startDate,
+            endDate: endDate && endDate,
+        });
+    }
+
+    onFocusChange(focusedInput: FocusedInputShape | null) {
+        this.setState({ focusedInput });
+    }
 
     handleSubmit = () => {
         const { history } = this.props;
@@ -36,9 +65,24 @@ class Booking extends React.Component<RouteComponentProps<{}>> {
     }
 
     render () {
+        const { focusedInput, startDate, endDate } = this.state;
+
         return (
             <>
                 <NavigeringEnkel tittel="BOOKING"/>
+
+            <DateRangePicker
+                onDatesChange={this.onDatesChange}
+                onFocusChange={this.onFocusChange}
+                focusedInput={focusedInput}
+                startDate={startDate}
+                endDate={endDate}
+                startDateId='startDate'
+                startDatePlaceholderText= 'Start Date'
+                endDateId= 'endDate'
+                endDatePlaceholderText = 'End Date'
+            />
+
                 <StyledBlockDiv>
                     <form>
                         <TextField
