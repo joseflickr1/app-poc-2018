@@ -6,9 +6,10 @@ import styled from 'styled-components';
 import { booking } from '../../helpers/booking';
 import { firebaseAuth } from '../../config/constants';
 import { RouteComponentProps } from 'react-router';
-import { DateRangePicker, FocusedInputShape } from 'react-dates';
+import { DateRangePicker, FocusedInputShape, isSameDay } from 'react-dates';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
+import * as moment from 'moment';
 
 const style = {
     TextField: {
@@ -23,6 +24,17 @@ const StyledBlockDiv = styled.div`
     max-width: 300px;
     margin: 4rem auto;
 `;
+
+const datesList = [
+    moment(),
+    moment().add(1, 'days'),
+    moment().add(3, 'days'),
+    moment().add(9, 'days'),
+    moment().add(10, 'days'),
+    moment().add(11, 'days'),
+    moment().add(12, 'days'),
+    moment().add(13, 'days'),
+];
 
 //tslint:disable
 class Booking extends React.Component<RouteComponentProps<{}>, any> {
@@ -72,6 +84,7 @@ class Booking extends React.Component<RouteComponentProps<{}>, any> {
                 <NavigeringEnkel tittel="BOOKING"/>
 
             <DateRangePicker
+                isDayBlocked={day1 => datesList.some(day2 => isSameDay(day1, day2))}
                 onDatesChange={this.onDatesChange}
                 onFocusChange={this.onFocusChange}
                 focusedInput={focusedInput}
