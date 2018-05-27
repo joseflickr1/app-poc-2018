@@ -4,9 +4,10 @@ import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 import styled from 'styled-components';
 import { booking } from '../../helpers/booking';
-import { firebaseAuth } from '../../config/constants';
+import { firebaseAuth, ref } from '../../config/constants';
 import { RouteComponentProps } from 'react-router';
-import { DateRangePicker, FocusedInputShape, isSameDay } from 'react-dates';
+import { SingleDatePicker, isSameDay } from 'react-dates';
+
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import * as moment from 'moment';
@@ -24,20 +25,15 @@ const StyledBlockDiv = styled.div`
     max-width: 300px;
     margin: 4rem auto;
 `;
-
-const datesList = [
-    moment(),
-    moment().add(1, 'days'),
-    moment().add(3, 'days'),
-    moment().add(9, 'days'),
-    moment().add(10, 'days'),
-    moment().add(11, 'days'),
-    moment().add(12, 'days'),
-    moment().add(13, 'days'),
-];
+//tslint:disable
+type EgenState = {
+    focused: boolean,
+    date: moment.Moment | null,
+    datesList: moment.Moment[],
+}
 
 //tslint:disable
-class Booking extends React.Component<RouteComponentProps<{}>, any> {
+class Booking extends React.Component<RouteComponentProps<{}>, EgenState> {
     navn: HTMLInputElement;
     fotoAv: HTMLInputElement;
     dato: HTMLInputElement;
@@ -47,29 +43,49 @@ class Booking extends React.Component<RouteComponentProps<{}>, any> {
         super(props);
 
         this.state = {
-            focusedInput: null,
-            startDate: null,
-            endDate: null,
+            focused: false,
+            date: null,
+            datesList: []
         };
 
         this.onDatesChange = this.onDatesChange.bind(this);
         this.onFocusChange = this.onFocusChange.bind(this);
     }
+
+    componentWillMount() {
+        ref.child('calender/').once('value')
+            .then((snapshot) => {
+
+                // todo bedre
+                // tslint:disable
+                let list = [];
+                for (let key in snapshot.val()) {
+                    list.push(moment(snapshot.val()[key].dato));
+                }
+
+                this.setState({
+                    datesList: list,
+                });
+            });
+    }
+
+
     //tslint:disable
-    onDatesChange({ startDate, endDate }: any) {
+    onDatesChange(date: any) {
         this.setState({
-            startDate: startDate && startDate,
-            endDate: endDate && endDate,
+            date,
         });
     }
 
-    onFocusChange(focusedInput: FocusedInputShape | null) {
-        this.setState({ focusedInput });
+    //tslint:disable
+    onFocusChange(focused: { focused: boolean }) {
+        this.setState({ focused: focused.focused});
     }
 
     handleSubmit = () => {
         const { history } = this.props;
         history.push('/profil');
+
         const user = firebaseAuth().currentUser;
         if (user) {
             booking(this.dato.value, this.navn.value, this.fotoAv.value, user.uid);
@@ -77,24 +93,19 @@ class Booking extends React.Component<RouteComponentProps<{}>, any> {
     }
 
     render () {
-        const { focusedInput, startDate, endDate } = this.state;
-
+        const { focused, date, datesList } = this.state;
         return (
             <>
                 <NavigeringEnkel tittel="BOOKING"/>
-
-            <DateRangePicker
-                isDayBlocked={day1 => datesList.some(day2 => isSameDay(day1, day2))}
-                onDatesChange={this.onDatesChange}
-                onFocusChange={this.onFocusChange}
-                focusedInput={focusedInput}
-                startDate={startDate}
-                endDate={endDate}
-                startDateId='startDate'
-                startDatePlaceholderText= 'Start Date'
-                endDateId= 'endDate'
-                endDatePlaceholderText = 'End Date'
-            />
+                    <SingleDatePicker
+                        isDayBlocked={day1 => datesList.some(day2 => isSameDay(day1, day2))}
+                        orientation="vertical"
+                        onDateChange={this.onDatesChange}
+                        onFocusChange={this.onFocusChange}
+                        focused={focused}
+                        date={date}
+                        id="date_input"
+                    />
 
                 <StyledBlockDiv>
                     <form>

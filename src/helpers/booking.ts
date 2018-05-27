@@ -7,6 +7,9 @@ export function booking (dato: string, navn: string, fotograferingAv: string, us
         navn: navn,
         fotograferingAv : fotograferingAv
     });
+    ref.child('calender/' + date.toDateString() + ' ' + date.toLocaleTimeString()).set({
+        dato:  dato,
+    });
 }
 
 export function hentBooking () {
