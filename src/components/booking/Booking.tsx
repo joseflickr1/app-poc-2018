@@ -36,7 +36,6 @@ type EgenState = {
 class Booking extends React.Component<RouteComponentProps<{}>, EgenState> {
     navn: HTMLInputElement;
     fotoAv: HTMLInputElement;
-    dato: HTMLInputElement;
 
     //tslint:disable
     constructor(props: any) {
@@ -88,7 +87,9 @@ class Booking extends React.Component<RouteComponentProps<{}>, EgenState> {
 
         const user = firebaseAuth().currentUser;
         if (user) {
-            booking(this.dato.value, this.navn.value, this.fotoAv.value, user.uid);
+            // todo fikse blank
+            const dd = this.state.date ? String(this.state.date) : '';
+            booking(dd, this.navn.value, this.fotoAv.value, user.uid);
         }
     }
 
@@ -97,24 +98,17 @@ class Booking extends React.Component<RouteComponentProps<{}>, EgenState> {
         return (
             <>
                 <NavigeringEnkel tittel="BOOKING"/>
-                    <SingleDatePicker
-                        isDayBlocked={day1 => datesList.some(day2 => isSameDay(day1, day2))}
-                        orientation="vertical"
-                        onDateChange={this.onDatesChange}
-                        onFocusChange={this.onFocusChange}
-                        focused={focused}
-                        date={date}
-                        id="date_input"
-                    />
 
                 <StyledBlockDiv>
                     <form>
-                        <TextField
-                            id="date"
-                            label="Dato"
-                            type="date"
-                            defaultValue="2017-05-24"
-                            inputProps={{ref: (dato: HTMLInputElement) => this.dato = dato}}
+                        <SingleDatePicker
+                            isDayBlocked={day1 => datesList.some(day2 => isSameDay(day1, day2))}
+                            orientation="vertical"
+                            onDateChange={this.onDatesChange}
+                            onFocusChange={this.onFocusChange}
+                            focused={focused}
+                            date={date}
+                            id="date_input"
                         />
                         <TextField
                             id="navn"
