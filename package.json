@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/icons": "latest",
+    "@material-ui/core": "^1.1.0",
+    "@material-ui/icons": "^1.1.0",
     "@types/react-dates": "^16.0.6",
     "firebase": "^4.13.1",
-    "material-ui": "next",
     "moment": "^2.22.1",
     "react": "^16.4.0",
     "react-dates": "^16.7.0",

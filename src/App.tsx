@@ -8,7 +8,7 @@ import Forside from './components/forside/Forside';
 import Booking from './components/booking/Booking';
 import { isAuthenticated } from './helpers/auth';
 import { firebaseAuth } from './config/constants';
-import CircularProgress from 'material-ui/Progress/CircularProgress';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import Profil from './components/profil/Profil';
 
 const style = {

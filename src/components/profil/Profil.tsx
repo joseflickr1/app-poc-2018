@@ -1,12 +1,12 @@
 import * as React from 'react';
 import NavigeringEnkel from '../navigering/NavigeringEnkel';
 import styled from 'styled-components';
-import Avatar from 'material-ui/Avatar';
-import Typography from 'material-ui/Typography';
+import Avatar from '@material-ui/core/Avatar';
+import Typography from '@material-ui/core/Typography';
 import { hentEpost, hentForsteBokstavEpost } from '../../helpers/auth';
 import { firebaseAuth, ref } from '../../config/constants';
-import Paper from 'material-ui/Paper';
-import LinearProgress from 'material-ui/Progress/LinearProgress';
+import Paper from '@material-ui/core/Paper';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 const StyledBlockDiv = styled.div`
     max-width: 300px;

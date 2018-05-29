@@ -1,7 +1,7 @@
 import * as React from 'react';
 import NavigeringEnkel from '../navigering/NavigeringEnkel';
-import TextField from 'material-ui/TextField';
-import Button from 'material-ui/Button';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 import { booking } from '../../helpers/booking';
 import { firebaseAuth, ref } from '../../config/constants';
@@ -103,7 +103,7 @@ class Booking extends React.Component<RouteComponentProps<{}>, EgenState> {
                     <form>
                         <SingleDatePicker
                             isDayBlocked={day1 => datesList.some(day2 => isSameDay(day1, day2))}
-                            orientation="vertical"
+                            numberOfMonths={1}
                             onDateChange={this.onDatesChange}
                             onFocusChange={this.onFocusChange}
                             focused={focused}

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Button from 'material-ui/Button';
+import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
-import TextField from 'material-ui/TextField';
+import TextField from '@material-ui/core/TextField';
 import { login } from '../helpers/auth';
 import NavigeringEnkel from './navigering/NavigeringEnkel';
 import { RouteComponentProps } from 'react-router';
