@@ -1,0 +1,9 @@
+.SingleDatePicker_picker {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+.DateInput {
+    width: inherit;
+}
+.DateInput_input {
+    width: 130px;
+}

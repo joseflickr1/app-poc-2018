@@ -12,6 +12,8 @@ import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import * as moment from 'moment';
 
+import './SingleDatePickerOverride.css';
+
 const style = {
     TextField: {
         width: '100%',
@@ -25,6 +27,12 @@ const StyledBlockDiv = styled.div`
     max-width: 300px;
     margin: 4rem auto;
 `;
+
+const StyledSingleDatePicker = styled(SingleDatePicker)`
+    width: 500px;
+`;
+
+
 //tslint:disable
 type EgenState = {
     focused: boolean,
@@ -101,7 +109,7 @@ class Booking extends React.Component<RouteComponentProps<{}>, EgenState> {
 
                 <StyledBlockDiv>
                     <form>
-                        <SingleDatePicker
+                        <StyledSingleDatePicker
                             isDayBlocked={day1 => datesList.some(day2 => isSameDay(day1, day2))}
                             numberOfMonths={1}
                             onDateChange={this.onDatesChange}
