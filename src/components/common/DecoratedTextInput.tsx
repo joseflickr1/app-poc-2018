@@ -27,7 +27,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 *
 * */
 
-const decorate = withStyles(({palette, spacing}) => ({
+const decorate = withStyles(() => ({
     root: {
         backgroundColor: primaryLighterColor,
         color: primaryContrastText,

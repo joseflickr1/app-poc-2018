@@ -1,4 +1,4 @@
-const primaryColor = '#00AADBD';
+const primaryColor = '#00AA8D';
 const primaryLighterColor = '#00BF9A';
 const primaryDarkerColor = '#008975';
 const secondaryColor = '#E91E63';
