@@ -4,6 +4,8 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
+require('typeface-roboto');
+
 ReactDOM.render(
   <App />,
   document.getElementById('root') as HTMLElement

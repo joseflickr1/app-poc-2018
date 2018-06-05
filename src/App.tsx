@@ -4,7 +4,8 @@ import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import { RouteProps } from 'react-router';
 import Registrering from './components/Registrering';
 import Logginn from './components/Logginn';
-import Forside from './components/forside/Forside';
+import Salgsside from './components/forside/Salgsside';
+import Salgsside2 from './components/forside/Salgsside2';
 import Booking from './components/booking/Booking';
 import { isAuthenticated } from './helpers/auth';
 import { firebaseAuth } from './config/constants';
@@ -76,7 +77,8 @@ class App extends React.Component {
             <BrowserRouter>
                 <div>
                     <Switch>
-                        <Route path="/" exact={true} component={Forside}/>
+                        <Route path="/" exact={true} component={Salgsside}/>
+                        <Route path="/salgsside2" exact={true} component={Salgsside2}/>
                         <PrivateRoute
                             authed={this.state.authed}
                             component={Booking}

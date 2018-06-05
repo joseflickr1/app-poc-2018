@@ -5,12 +5,13 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Typography from '@material-ui/core/Typography';
+import { primaryColor } from '../../assets/jss/material-fotohjelp-react';
 
 const logo = require('./logo.svg');
 
 const style = {
     appbar: {
-        backgroundColor: '#00AA8D',
+        backgroundColor: primaryColor,
         color: 'white',
         height: '8rem'
     },
