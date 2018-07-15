@@ -3,7 +3,11 @@ import Typography from '@material-ui/core/Typography';
 import styled from 'styled-components';
 import Navigering from '../navigering/Navigering';
 import { RouteComponentProps } from 'react-router';
-import { primaryColor, primaryContrastText } from '../../assets/jss/material-fotohjelp-react';
+import { primaryContrastText } from '../../assets/jss/material-fotohjelp-react';
+import DecoratedTextInput from '../common/DecoratedTextInput';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+const faceSvg = require('./face3.svg');
 
 const StyledDivBackground = styled.div`
     position: absolute;
@@ -12,16 +16,16 @@ const StyledDivBackground = styled.div`
     left: 0;
     width: 100%;
     height: 100%
-    background-color: ${primaryColor}
-    color: ${primaryContrastText}
 `;
 
 const StyledHeader = styled.div`
     max-width: 375px;
-    text-align: center;
     margin: 0 auto;
     padding: 1rem 1rem 0 1rem;
     > h1 {
+        margin-bottom: 10px;
+    }
+    > h1, p {
         color: ${primaryContrastText}
     }
 `;
@@ -75,16 +79,29 @@ export default class Salgsside extends React.Component<RouteComponentProps<{}>> 
                 <Navigering/>
 
                 <StyledHeader>
+                    <img src={faceSvg} style={{width: '200px', height: '200px'}}/>
+
                     <Typography
                         variant="display1"
                     >
                         Vi hjelper deg med fotografering
                     </Typography>
                     <Typography
-                        variant="headline"
+                        variant="body1"
                     >
                         Vi tilbyr kvalitets fotografering og gode priser til dine behov
                     </Typography>
+
+                    <DecoratedTextInput
+                        id="Navn"
+                        label="Navn"
+                        startAdornment={
+                            <InputAdornment position="start" >
+                                <AccountCircle/>
+                            </InputAdornment>
+                        }
+
+                    />
                 </StyledHeader>
 
                 {/*<StyledContent>

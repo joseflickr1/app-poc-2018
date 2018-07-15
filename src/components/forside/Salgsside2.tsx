@@ -15,6 +15,7 @@ import * as H from 'history';
 
 const bilde1 = require('./img/spencer-backman-488537-unsplash.png');
 const bilde2 = require('./img/etienne-boulanger-265266-unsplash.png');
+
 const style = {
     bookingKnapp: {
         width: '36px',
