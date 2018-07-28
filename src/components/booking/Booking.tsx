@@ -28,35 +28,37 @@ const StyledBlockDiv = styled.div`
     margin: 4rem auto;
 `;
 
-const StyledSingleDatePicker = styled(SingleDatePicker)`
-    width: 500px;
-`;
+type bookingInfo = {
+    navn: string,
+    fotoAv: string,
+};
 
-
-//tslint:disable
 type EgenState = {
     focused: boolean,
     date: moment.Moment | null,
     datesList: moment.Moment[],
-}
+    bookingInfo: bookingInfo
+};
 
-//tslint:disable
 class Booking extends React.Component<RouteComponentProps<{}>, EgenState> {
-    navn: HTMLInputElement;
-    fotoAv: HTMLInputElement;
 
-    //tslint:disable
+    // tslint:disable-next-line
     constructor(props: any) {
         super(props);
 
         this.state = {
             focused: false,
             date: null,
-            datesList: []
+            datesList: [],
+            bookingInfo: {
+                navn: '',
+                fotoAv: '',
+            }
         };
 
         this.onDatesChange = this.onDatesChange.bind(this);
         this.onFocusChange = this.onFocusChange.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
     }
 
     componentWillMount() {
@@ -64,8 +66,9 @@ class Booking extends React.Component<RouteComponentProps<{}>, EgenState> {
             .then((snapshot) => {
 
                 // todo bedre
-                // tslint:disable
+                // tslint:disable-next-line
                 let list = [];
+                // tslint:disable-next-line
                 for (let key in snapshot.val()) {
                     list.push(moment(snapshot.val()[key].dato));
                 }
@@ -76,15 +79,12 @@ class Booking extends React.Component<RouteComponentProps<{}>, EgenState> {
             });
     }
 
-
-    //tslint:disable
-    onDatesChange(date: any) {
+    onDatesChange(date: moment.Moment) {
         this.setState({
             date,
         });
     }
 
-    //tslint:disable
     onFocusChange(focused: { focused: boolean }) {
         this.setState({ focused: focused.focused});
     }
@@ -95,21 +95,35 @@ class Booking extends React.Component<RouteComponentProps<{}>, EgenState> {
 
         const user = firebaseAuth().currentUser;
         if (user) {
-            // todo fikse blank
+            // todo fikse blank, påkrevd felt
             const dd = this.state.date ? String(this.state.date) : '';
-            booking(dd, this.navn.value, this.fotoAv.value, user.uid);
+            booking(dd, this.state.bookingInfo.navn, this.state.bookingInfo.fotoAv, user.uid);
         }
+    }
+
+    // tslint:disable-next-line
+    handleInputChange = (name: string) => (event: any) => {
+
+        let info = {...this.state.bookingInfo,
+            [name]: event.target.value
+        };
+
+        this.setState({
+            bookingInfo: info
+        });
+
     }
 
     render () {
         const { focused, date, datesList } = this.state;
+        const { navn, fotoAv } = this.state.bookingInfo;
         return (
             <>
                 <NavigeringEnkel tittel="BOOKING"/>
 
                 <StyledBlockDiv>
                     <form>
-                        <StyledSingleDatePicker
+                        <SingleDatePicker
                             isDayBlocked={day1 => datesList.some(day2 => isSameDay(day1, day2))}
                             numberOfMonths={1}
                             onDateChange={this.onDatesChange}
@@ -122,14 +136,16 @@ class Booking extends React.Component<RouteComponentProps<{}>, EgenState> {
                             id="navn"
                             label="Navn"
                             margin="normal"
-                            inputProps={{ref: (navn: HTMLInputElement) => this.navn = navn}}
+                            value={navn}
+                            onChange={this.handleInputChange('navn')}
                             style={style.TextField}
                         />
                         <TextField
                             id="hvemskaltasbildeav"
                             label="Hvem skal tas bilde av"
                             margin="normal"
-                            inputProps={{ref: (fotoAv: HTMLInputElement) => this.fotoAv = fotoAv}}
+                            value={fotoAv}
+                            onChange={this.handleInputChange('fotoAv')}
                             style={style.TextField}
                         />
                         <Button
