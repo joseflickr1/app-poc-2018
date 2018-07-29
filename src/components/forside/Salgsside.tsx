@@ -4,9 +4,8 @@ import styled from 'styled-components';
 import Navigering from '../navigering/Navigering';
 import { RouteComponentProps } from 'react-router';
 import { primaryContrastText } from '../../assets/jss/material-fotohjelp-react';
-import DecoratedTextInput from '../common/DecoratedTextInput';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import AccountCircle from '@material-ui/icons/AccountCircle';
+import DecoratedButtonLink from '../common/DecoratedButtonLink';
+
 const faceSvg = require('./face3.svg');
 
 const StyledDivBackground = styled.div`
@@ -92,16 +91,9 @@ export default class Salgsside extends React.Component<RouteComponentProps<{}>> 
                         Vi tilbyr kvalitets fotografering og gode priser til dine behov
                     </Typography>
 
-                    <DecoratedTextInput
-                        id="Navn"
-                        label="Navn"
-                        startAdornment={
-                            <InputAdornment position="start" >
-                                <AccountCircle/>
-                            </InputAdornment>
-                        }
-
-                    />
+                    <DecoratedButtonLink props={{href: '/booking' }}>
+                        Book i dag
+                    </DecoratedButtonLink>
                 </StyledHeader>
 
                 {/*<StyledContent>
