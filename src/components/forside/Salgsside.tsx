@@ -8,20 +8,12 @@ import DecoratedButtonLink from '../common/DecoratedButtonLink';
 
 const faceSvg = require('./face3.svg');
 
-const StyledDivBackground = styled.div`
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%
-`;
-
 const StyledHeader = styled.div`
-    max-width: 375px;
+    text-align: center;
+    max-width: 500px;
     margin: 0 auto;
     padding: 1rem 1rem 0 1rem;
-    > h1 {
+    > h1, p {
         margin-bottom: 10px;
     }
     > h1, p {
@@ -29,14 +21,10 @@ const StyledHeader = styled.div`
     }
 `;
 
-/*const StyledContent = styled.div`
-    max-width: 100%;
+const StyledContent = styled.div`
+    max-width: 500px;
     margin: 0 auto;
     padding: 1rem;
-        
-    @media (min-width: 768px) {
-        max-width: 500px;
-    }
     
     > p {
         padding-bottom: 10px;
@@ -55,26 +43,21 @@ const StyledHeader = styled.div`
 
 const StyledFooter = styled.div`
     text-align: right;
-    max-width: 100%;
+    max-width: 768px;
     margin: 0 auto;
     padding: 1rem;
         
-    @media (min-width: 768px) {
-        max-width: 768px;
-    }
-    
     > p {
         padding: 0;
         margin: 0;
     }
 
-`;*/
+`;
 
 export default class Salgsside extends React.Component<RouteComponentProps<{}>> {
     render() {
         return (
             <div>
-                <StyledDivBackground/>
                 <Navigering/>
 
                 <StyledHeader>
@@ -96,10 +79,9 @@ export default class Salgsside extends React.Component<RouteComponentProps<{}>> 
                     </DecoratedButtonLink>
                 </StyledHeader>
 
-                {/*<StyledContent>
+                <StyledContent>
                     <Typography>
-                        Vi er et lite selskap og som er i startfasen. Vi tilbyr kvalitet og profesjonell fotografering
-                        til private og bedrifter.
+                        Vi er et lite team som tilbyr fotografering til alle anledninger.
                     </Typography>
                     <Typography>
                         Vi har hatt fotografering som en hobby i mange år og har opparbeidet
@@ -122,7 +104,7 @@ export default class Salgsside extends React.Component<RouteComponentProps<{}>> 
                     <Typography>
                         info@fotohjelp.no
                     </Typography>
-                </StyledFooter>*/}
+                </StyledFooter>
             </div>
         );
     }

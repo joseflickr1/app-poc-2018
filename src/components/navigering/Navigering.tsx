@@ -1,11 +1,11 @@
 import * as React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Typography from '@material-ui/core/Typography';
 import { primaryColor } from '../../assets/jss/material-fotohjelp-react';
+import ButtonAuth from './ButtonAuth';
 
 const logo = require('./logo.svg');
 
@@ -37,12 +37,7 @@ const Navigering = () => {
                         <IconButton color="inherit" aria-label="Menu">
                             <MenuIcon/>
                         </IconButton>
-                        <Button
-                            color="inherit"
-                            href="/logginn"
-                        >
-                            LOGG INN
-                        </Button>
+                        <ButtonAuth />
                     </div>
                     <div style={{textAlign: 'center'}}>
                         <div style={style.logoContainer}>

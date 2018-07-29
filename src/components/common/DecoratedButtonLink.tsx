@@ -9,6 +9,7 @@ const decorate = withStyles(() => ({
     root: {
         backgroundColor: primaryLighterColor,
         color: primaryContrastText,
+        margin: '2rem 0'
     }
 }));
 
