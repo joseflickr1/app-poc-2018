@@ -15,7 +15,7 @@ import Profil from './components/profil/Profil';
 const style = {
     circlularProgress: {
         maxWidth: '38px',
-        margin: '6vh auto'
+        margin: '30vh auto'
     }
 };
 
