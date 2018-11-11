@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Navigering from '../navigering/Navigering';
 import { RouteComponentProps } from 'react-router';
 import { primaryContrastText } from '../../assets/jss/material-fotohjelp-react';
-import DecoratedButtonLink from '../common/DecoratedButtonLink';
+import DecoratedButton from '../common/DecoratedButton';
 
 const faceSvg = require('./face3.svg');
 
@@ -74,9 +74,9 @@ export default class Salgsside extends React.Component<RouteComponentProps<{}>> 
                         Vi tilbyr kvalitets fotografering og gode priser til dine behov
                     </Typography>
 
-                    <DecoratedButtonLink props={{href: '/booking' }}>
+                    <DecoratedButton props={{href: '/booking' }}>
                         Book i dag
-                    </DecoratedButtonLink>
+                    </DecoratedButton>
                 </StyledHeader>
 
                 <StyledContent>

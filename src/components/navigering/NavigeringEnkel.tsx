@@ -4,8 +4,9 @@ import ArrowBack from '@material-ui/icons/ArrowBack';
 import Typography from '@material-ui/core/Typography';
 import { RouteComponentProps } from 'react-router';
 import { withRouter } from 'react-router-dom';
-import DecoratedAppbar from '../common/DecoratedAppbar';
+
 import DecoratedToolbar from '../common/DecoratedToolbar';
+import { primaryContrastText } from '../../assets/jss/material-fotohjelp-react';
 
 interface EgenProps {
     tittel: string;
@@ -14,8 +15,7 @@ interface EgenProps {
 const NavigeringEnkel = ({tittel, history}: EgenProps & RouteComponentProps<{}>) => {
     return (
         <>
-        <DecoratedAppbar>
-            <DecoratedToolbar style={{display: 'flex', justifyContent: 'space-between'}}>
+            <DecoratedToolbar>
                 <div>
                     <IconButton
                         color="inherit"
@@ -29,7 +29,7 @@ const NavigeringEnkel = ({tittel, history}: EgenProps & RouteComponentProps<{}>)
                     <Typography
                         variant="body2"
                         style={{
-                            color: 'white'
+                            color: primaryContrastText
                         }}
 
                     >
@@ -37,7 +37,6 @@ const NavigeringEnkel = ({tittel, history}: EgenProps & RouteComponentProps<{}>)
                     </Typography>
                 </div>
             </DecoratedToolbar>
-        </DecoratedAppbar>
         </>
     );
 };

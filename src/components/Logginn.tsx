@@ -1,10 +1,10 @@
 import * as React from 'react';
-import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 import TextField from '@material-ui/core/TextField';
 import { login } from '../helpers/auth';
 import NavigeringEnkel from './navigering/NavigeringEnkel';
 import { RouteComponentProps } from 'react-router';
+import DecoratedButton from './common/DecoratedButton';
 
 const StyledBlockDiv = styled.div`
     max-width: 300px;
@@ -64,17 +64,17 @@ export default class Registrering extends React.Component<RouteComponentProps<{}
                             inputProps={{ref: (pw: HTMLInputElement) => this.pw = pw}}
                             style={style.TextField}
                         />
-                        <Button
+                        <DecoratedButton
                             variant="raised"
                             size="medium"
                             color="primary"
                             onClick={() => this.handleSubmit()}
                         >
                             LOGG INN
-                        </Button>
-                        <Button href="/registrer">
+                        </DecoratedButton>
+                        <DecoratedButton props={{href: '/registrer' }}>
                             REGISTRERING
-                        </Button>
+                        </DecoratedButton>
                     </form>
 
                 </StyledBlockDiv>

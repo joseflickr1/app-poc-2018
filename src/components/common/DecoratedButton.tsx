@@ -3,20 +3,23 @@ import * as React from 'react';
 import Button from '@material-ui/core/Button';
 
 import {withStyles} from '@material-ui/core/styles';
-import {primaryLighterColor, primaryContrastText} from "../../assets/jss/material-fotohjelp-react";
+import {primaryLighterColor} from "../../assets/jss/material-fotohjelp-react";
 
 const decorate = withStyles(() => ({
     root: {
         backgroundColor: primaryLighterColor,
-        color: primaryContrastText,
-        margin: '2rem 0'
+        color: '#f2f2f2',
+        margin: '0.5rem 0',
+        width: '100%',
+        padding: '16px',
+        borderRadius: '8px'
     }
 }));
 
-const DecoratedButtonLink = decorate<any>(({classes, children, props}) => (
+const DecoratedButton = decorate<any>(({classes, children, props}) => (
     <Button {...props} classes={classes} >
         {children}
     </Button>
 ));
 
-export default DecoratedButtonLink;
+export default DecoratedButton;

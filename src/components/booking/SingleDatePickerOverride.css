@@ -7,3 +7,47 @@
 .DateInput_input {
     width: 130px;
 }
+
+
+.DayPicker__withBorder {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.DayPicker > div > div { width: 375px !important; }
+.DayPicker {
+    width: 375px !important;
+    height: 375px !important;
+
+}
+
+.DayPicker_transitionContainer {
+    width: auto !important;
+}
+.DayPicker_transitionContainer {
+    width: 375px !important;
+    height: 375px !important;
+}
+.DayPicker_weekHeader_li {
+    width: 48px !important;
+}
+
+.CalendarMonth {
+    padding: 0px !important;
+}
+
+.CalendarMonth_table {
+    border-collapse: separate;
+    border-spacing: 8px;
+}
+.CalendarDay__default {
+    border-radius: 8px;
+}
+
+.DayPickerNavigation_button__default {
+    border: none;
+}
+.DayPickerKeyboardShortcuts_buttonReset {
+    display: none;
+}
+

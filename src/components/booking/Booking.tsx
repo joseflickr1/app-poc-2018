@@ -24,8 +24,8 @@ const style = {
 };
 
 const StyledBlockDiv = styled.div`
-    max-width: 300px;
-    margin: 4rem auto;
+    max-width: 375px;
+    margin: 4rem 10;
 `;
 
 type bookingInfo = {
@@ -115,7 +115,7 @@ class Booking extends React.Component<RouteComponentProps<{}>, EgenState> {
     }
 
     render () {
-        const { focused, date, datesList } = this.state;
+        const { date, datesList } = this.state;
         const { navn, fotoAv } = this.state.bookingInfo;
         return (
             <>
@@ -128,8 +128,10 @@ class Booking extends React.Component<RouteComponentProps<{}>, EgenState> {
                             numberOfMonths={1}
                             onDateChange={this.onDatesChange}
                             onFocusChange={this.onFocusChange}
-                            focused={focused}
+                            focused={true}
                             date={date}
+                            daySize={42}
+                            transitionDuration={0}
                             id="date_input"
                         />
                         <TextField

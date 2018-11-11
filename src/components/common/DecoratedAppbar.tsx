@@ -3,11 +3,11 @@ import * as React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 
 import {withStyles} from '@material-ui/core/styles';
-import {primaryColor, primaryContrastText} from "../../assets/jss/material-fotohjelp-react";
+import { primaryContrastText } from "../../assets/jss/material-fotohjelp-react";
 
 const decorate = withStyles(() => ({
     root: {
-        backgroundColor: primaryColor,
+        backgroundColor: 'transparent',
         color: primaryContrastText,
     }
 }));
