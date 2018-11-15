@@ -1,19 +1,16 @@
-.SingleDatePicker_picker {
+.DayPicker {
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
-.DateInput {
-    width: inherit;
-}
-.DateInput_input {
-    width: 130px;
-}
-
 
 .DayPicker__withBorder {
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
 }
+.DateInput_fang {
+    display: none;
+}
 
+/*
 .DayPicker > div > div { width: 375px !important; }
 .DayPicker {
     width: 375px !important;
@@ -41,9 +38,15 @@
     border-spacing: 8px;
 }
 .CalendarDay__default {
-    border-radius: 8px;
+background: rgb(237, 246, 246);
+color: rgb(0, 132, 137);
+border: 2px solid rgb(255, 255, 255);
+border-radius: 7px;
+padding: 0px;
 }
+*/
 
+.DayPickerNavigation_button__default:hover,
 .DayPickerNavigation_button__default {
     border: none;
 }

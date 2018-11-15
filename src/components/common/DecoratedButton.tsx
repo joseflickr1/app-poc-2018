@@ -17,7 +17,10 @@ const decorate = withStyles(() => ({
 }));
 
 const DecoratedButton = decorate<any>(({classes, children, props}) => (
-    <Button {...props} classes={classes} >
+    <Button
+        {...props}
+        classes={classes}
+    >
         {children}
     </Button>
 ));
