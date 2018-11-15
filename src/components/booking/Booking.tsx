@@ -1,12 +1,12 @@
 import * as React from 'react';
 import NavigeringEnkel from '../navigering/NavigeringEnkel';
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 import { booking } from '../../helpers/booking';
 import { firebaseAuth, ref } from '../../config/constants';
+import DecoratedButton from '../common/DecoratedButton';
 import { RouteComponentProps } from 'react-router';
-import { SingleDatePicker, isSameDay } from 'react-dates';
+import { DayPickerSingleDateController, isSameDay } from 'react-dates';
 
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
@@ -24,8 +24,8 @@ const style = {
 };
 
 const StyledBlockDiv = styled.div`
-    max-width: 375px;
-    margin: 4rem 10;
+    max-width: 335px;
+    margin: 2rem auto;
 `;
 
 type bookingInfo = {
@@ -72,7 +72,6 @@ class Booking extends React.Component<RouteComponentProps<{}>, EgenState> {
                 for (let key in snapshot.val()) {
                     list.push(moment(snapshot.val()[key].dato));
                 }
-
                 this.setState({
                     datesList: list,
                 });
@@ -103,37 +102,27 @@ class Booking extends React.Component<RouteComponentProps<{}>, EgenState> {
 
     // tslint:disable-next-line
     handleInputChange = (name: string) => (event: any) => {
-
         let info = {...this.state.bookingInfo,
             [name]: event.target.value
         };
-
         this.setState({
             bookingInfo: info
         });
-
     }
 
+    isBlocked = (day1: moment.Moment) => this.state.datesList.some(day2 => isSameDay(day1, day2));
+    isNotBlocked = (day1: moment.Moment) => false;
+
     render () {
-        const { date, datesList } = this.state;
+        const { focused, date, datesList } = this.state;
         const { navn, fotoAv } = this.state.bookingInfo;
+
         return (
             <>
                 <NavigeringEnkel tittel="BOOKING"/>
 
                 <StyledBlockDiv>
                     <form>
-                        <SingleDatePicker
-                            isDayBlocked={day1 => datesList.some(day2 => isSameDay(day1, day2))}
-                            numberOfMonths={1}
-                            onDateChange={this.onDatesChange}
-                            onFocusChange={this.onFocusChange}
-                            focused={true}
-                            date={date}
-                            daySize={42}
-                            transitionDuration={0}
-                            id="date_input"
-                        />
                         <TextField
                             id="navn"
                             label="Navn"
@@ -150,15 +139,20 @@ class Booking extends React.Component<RouteComponentProps<{}>, EgenState> {
                             onChange={this.handleInputChange('fotoAv')}
                             style={style.TextField}
                         />
-                        <Button
-                            variant="raised"
-                            size="medium"
-                            color="primary"
-                            style={style.Button}
-                            onClick={this.handleSubmit}
+                        <DayPickerSingleDateController
+                            isDayBlocked={datesList.length !== 0 ? this.isBlocked : this.isNotBlocked}
+                            numberOfMonths={1}
+                            onDateChange={this.onDatesChange}
+                            onFocusChange={this.onFocusChange}
+                            focused={focused}
+                            date={date}
+                            daySize={42}
+                        />
+                        <DecoratedButton
+                            props={{onClick: this.handleSubmit }}
                         >
                             Book avtale
-                        </Button>
+                        </DecoratedButton>
                     </form>
 
                 </StyledBlockDiv>
