@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb5e096b-a92e-4d63-aefb-06cd23cf9c1d" name="Default" comment="package">
-      <change afterPath="$PROJECT_DIR$/tsconfig.prod.json" afterDir="false" />
+    <list default="true" id="fb5e096b-a92e-4d63-aefb-06cd23cf9c1d" name="Default" comment="test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -51,7 +50,7 @@
           <entry key="css" value="5" />
           <entry key="gitconfig" value="1" />
           <entry key="js" value="10" />
-          <entry key="json" value="7" />
+          <entry key="json" value="8" />
           <entry key="jsx" value="8" />
           <entry key="md" value="1" />
           <entry key="ts" value="11" />
@@ -62,7 +61,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="5" />
-          <entry key="JSON" value="7" />
+          <entry key="JSON" value="8" />
           <entry key="JSX Harmony" value="8" />
           <entry key="JavaScript" value="10" />
           <entry key="Markdown" value="1" />
@@ -74,20 +73,20 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="960" />
-          <entry key="json" value="33" />
+          <entry key="json" value="35" />
           <entry key="md" value="16" />
           <entry key="ts" value="82" />
           <entry key="tsx" value="1407" />
-          <entry key="txt" value="7" />
+          <entry key="txt" value="12" />
           <entry key="vmoptions" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="960" />
-          <entry key="JSON" value="33" />
+          <entry key="JSON" value="35" />
           <entry key="Markdown" value="16" />
-          <entry key="PLAIN_TEXT" value="8" />
+          <entry key="PLAIN_TEXT" value="13" />
           <entry key="TypeScript" value="82" />
           <entry key="TypeScript JSX" value="1407" />
         </counts>
@@ -100,15 +99,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/booking/SingleDatePickerOverride.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="49" column="38" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/booking/Booking.tsx">
           <provider selected="true" editor-type-id="text-editor">
@@ -133,8 +123,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31">
-              <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+            <state relative-caret-position="166">
+              <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package-lock.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="9798" column="15" selection-start-line="9798" selection-start-column="15" selection-end-line="9798" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -207,7 +206,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>bloc</find>
       <find>__default</find>
       <find>daySize</find>
       <find>react-with-styles-interface-css</find>
@@ -237,6 +235,7 @@
       <find>Mome</find>
       <find>dateslist</find>
       <find>q</find>
+      <find>webpack-de</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -430,7 +429,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542739438102" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542740791930" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -444,7 +443,7 @@
     <property name="node.js.selected.package.tslint" value="$PROJECT_DIR$/node_modules/tslint" />
     <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v9.2.0/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.tslint" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -583,7 +582,7 @@
       <workItem from="1542131362172" duration="3848000" />
       <workItem from="1542269738799" duration="109000" />
       <workItem from="1542304423374" duration="1335000" />
-      <workItem from="1542737428770" duration="1785000" />
+      <workItem from="1542737428770" duration="3721000" />
     </task>
     <task id="LOCAL-00001" summary="Legg til material-ui og styled components">
       <created>1513515054100</created>
@@ -893,11 +892,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541978281575</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="test">
+      <created>1542739520488</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1542739520488</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241289000" />
+    <option name="totallyTimeSpent" value="243225000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -927,8 +933,8 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50403875" side_tool="true" weight="0.11302983" />
       <window_info anchor="bottom" id="TypeScript" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49596122" weight="0.31877023" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49375" visible="true" weight="0.66019416" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49596122" visible="true" weight="0.31877023" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49375" weight="0.32200646" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32876712" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -1018,7 +1024,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ny design" />
     <MESSAGE value="ny booking" />
     <MESSAGE value="booking wip" />
     <MESSAGE value="reg wip" />
@@ -1043,16 +1048,10 @@
     <MESSAGE value="Små fiks" />
     <MESSAGE value="Små fiks logg inn/ut" />
     <MESSAGE value="package" />
-    <option name="LAST_COMMIT_MESSAGE" value="package" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/navigering/ButtonAuth.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1389,10 +1388,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="9798" column="15" selection-start-line="9798" selection-start-column="15" selection-end-line="9798" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+        <state relative-caret-position="166">
+          <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
         </state>
       </provider>
     </entry>
