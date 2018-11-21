@@ -13,6 +13,9 @@ import 'react-dates/lib/css/_datepicker.css';
 import * as moment from 'moment';
 
 import './SingleDatePickerOverride.css';
+import DecoratedTextInput from '../common/DecoratedTextInput';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 
 const style = {
     TextField: {
@@ -131,7 +134,17 @@ class Booking extends React.Component<RouteComponentProps<{}>, EgenState> {
                             onChange={this.handleInputChange('navn')}
                             style={style.TextField}
                         />
-                        <TextField
+
+                        <DecoratedTextInput
+                            id="Navn"
+                            label="Navn"
+                            startAdornment={
+                                <InputAdornment position="start" >
+                                    <AccountCircle/>
+                                </InputAdornment>
+                            }
+
+                        />                        <TextField
                             id="hvemskaltasbildeav"
                             label="Hvem skal tas bilde av"
                             margin="normal"
