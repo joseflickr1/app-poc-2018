@@ -73,7 +73,7 @@ class Booking extends React.Component<RouteComponentProps<{}>, EgenState> {
                 let list = [];
                 // tslint:disable-next-line
                 for (let key in snapshot.val()) {
-                    list.push(moment(snapshot.val()[key].dato));
+                    list.push(moment(new Date(snapshot.val()[key].dato)));
                 }
                 this.setState({
                     datesList: list,
@@ -138,13 +138,16 @@ class Booking extends React.Component<RouteComponentProps<{}>, EgenState> {
                         <DecoratedTextInput
                             id="Navn"
                             label="Navn"
+                            value={navn}
+                            onChange={this.handleInputChange('navn')}
                             startAdornment={
                                 <InputAdornment position="start" >
                                     <AccountCircle/>
                                 </InputAdornment>
                             }
+                        />
 
-                        />                        <TextField
+                        <TextField
                             id="hvemskaltasbildeav"
                             label="Hvem skal tas bilde av"
                             margin="normal"

@@ -31,27 +31,20 @@ const decorate = withStyles(() => ({
         padding: '5px 10px',
         borderRadius: '5px'
     },
-    underline: {
-        "&:hover:not($disabled):before,&:before": {
-            borderBottom: 'none !important'
-        },
-        "&:after": {
-            borderBottom: 'none !important'
-        }
-    },
     error: {
         border: '1px solid red',
     }
 }));
 
-const DecoratedTextInput = decorate<any>(({id, label, inputProps, startAdornment, classes}) => (
+const DecoratedTextInput = decorate<any>(({id, label, value, onChange, inputProps, startAdornment, classes}) => (
     <FormControl fullWidth={true}>
         <Input
+            disableUnderline={true}
             placeholder={label}
+            value={value}
+            onChange={onChange}
             classes={classes}
-            inputProps={{
-                'aria-label': label,
-            }}
+            inputProps={inputProps}
             startAdornment={startAdornment}
         />
     </FormControl>

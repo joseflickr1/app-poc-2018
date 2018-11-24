@@ -68,7 +68,9 @@ export default class Registrering extends React.Component<RouteComponentProps<{}
                             variant="raised"
                             size="medium"
                             color="primary"
-                            onClick={() => this.handleSubmit()}
+                            props={{
+                                onClick: () => this.handleSubmit()
+                            }}
                         >
                             LOGG INN
                         </DecoratedButton>
