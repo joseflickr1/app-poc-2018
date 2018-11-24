@@ -17,7 +17,7 @@ export function resetPassword (email: string) {
   return firebaseAuth().sendPasswordResetEmail(email);
 }
 
-export function saveUser (user: {email: string, uid: string}) {
+export function saveUser (user: any) { // tslint:disable-line
   return ref.child(`users/${user.uid}/info`)
     .set({
       email: user.email,
