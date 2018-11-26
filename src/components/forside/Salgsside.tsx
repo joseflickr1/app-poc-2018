@@ -11,7 +11,21 @@ import 'animate.css';
 const faceSvg = require('./face3.svg');
 
 const StyledHeader = styled.div`
-    animation-duration: 0.33s !important;
+    
+    animation-name: fadeInDown;
+    animation-duration: 400ms;
+    @keyframes fadeInDown {
+        0% {
+            opacity: 0;
+            transform: translate3d(0, -2000px, 0);
+        }
+        
+        100% {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    
     
     text-align: center;
     max-width: 500px;
@@ -64,7 +78,7 @@ export default class Salgsside extends React.Component<RouteComponentProps<{}>> 
             <div>
                 <Navigering/>
 
-                <StyledHeader className="animated fadeInDownBig">
+                <StyledHeader>
 
                     <img
                         className="animated zoomIn"
