@@ -11,6 +11,8 @@ import 'animate.css';
 const faceSvg = require('./face3.svg');
 
 const StyledHeader = styled.div`
+    animation-duration: 0.33s !important;
+    
     text-align: center;
     max-width: 500px;
     margin: 0 auto;
@@ -61,9 +63,17 @@ export default class Salgsside extends React.Component<RouteComponentProps<{}>> 
         return (
             <div>
                 <Navigering/>
-                <StyledHeader>
 
-                    <img className="animated bounce" src={faceSvg} style={{width: '200px', height: '200px'}}/>
+                <StyledHeader className="animated fadeInDownBig">
+
+                    <img
+                        className="animated zoomIn"
+                        src={faceSvg}
+                        style={{
+                            width: '200px',
+                            height: '200px',
+                        }}
+                    />
 
                     <Typography
                         variant="display1"
