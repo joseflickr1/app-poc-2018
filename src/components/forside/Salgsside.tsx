@@ -6,6 +6,8 @@ import { RouteComponentProps } from 'react-router';
 import { primaryContrastText } from '../../assets/jss/material-fotohjelp-react';
 import DecoratedButton from '../common/DecoratedButton';
 
+import 'animate.css';
+
 const faceSvg = require('./face3.svg');
 
 const StyledHeader = styled.div`
@@ -59,9 +61,9 @@ export default class Salgsside extends React.Component<RouteComponentProps<{}>> 
         return (
             <div>
                 <Navigering/>
-
                 <StyledHeader>
-                    <img src={faceSvg} style={{width: '200px', height: '200px'}}/>
+
+                    <img className="animated bounce" src={faceSvg} style={{width: '200px', height: '200px'}}/>
 
                     <Typography
                         variant="display1"
